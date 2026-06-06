@@ -1,0 +1,8 @@
+{
+    "Name": "Counter (example)",
+    "Maintainers": ["your-team@example.com"],
+    "Component": ["system/counter"],
+    "Description": "Sample AOSP system service demonstrating AIDL, build, and sepolicy wiring.",
+    "Bug": "https://example.com/issue-tracker",
+    "Visibility": ["PUBLIC"],
+}

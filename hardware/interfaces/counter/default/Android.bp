@@ -1,0 +1,48 @@
+cc_library_shared {
+    name: "android.hardware.counter-impl",
+    srcs: [
+        "Counter.cpp",
+        "Counter.h",
+    ],
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.counter-aidl-ndk",
+    ],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+    vendor: true,
+    relative_install_path: "hw",
+    apex_available: [
+        "//apex_available:platform",
+    ],
+}
+
+cc_binary {
+    name: "android.hardware.counter-service",
+    srcs: [
+        "service.cpp",
+    ],
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.counter-impl",
+        "android.hardware.counter-aidl-ndk",
+    ],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+    vendor: true,
+    init_rc: [
+        "android.hardware.counter-service.rc",
+    ],
+    relative_install_path: "hw",
+    apex_available: [
+        "//apex_available:platform",
+    ],
+}

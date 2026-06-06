@@ -1,0 +1,29 @@
+include_subdirs = ["*"]
+
+aidl_interface {
+    name: "android.os.ICounterService-aidl",
+    vendor_available: false,
+    srcs: [
+        "android/os/ICounterService.aidl",
+    ],
+    local_include_dir: ".",
+    stability: "vintf",
+    host_supported: true,
+    cpp: {
+        enabled: false,
+    },
+    ndk: {
+        enabled: false,
+    },
+    rust: {
+        enabled: false,
+    },
+    java: {
+        enabled: true,
+        sdk_version: "module_current",
+        min_sdk_version: "33",
+    },
+    versions: [
+        "1",
+    ],
+}

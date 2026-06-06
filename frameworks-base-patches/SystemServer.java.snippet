@@ -1,0 +1,14 @@
+// File: frameworks/base/services/java/com/android/server/SystemServer.java
+// Add the import near the other com.android.server.* imports.
+
+import com.android.server.counter.CounterService;
+
+// In startOtherServices(), add this block (alongside other "Slog.i(TAG, ...)" lines):
+
+            try {
+                Slog.i(TAG, "Counter Service");
+                ServiceManager.addService(Context.COUNTER_SERVICE,
+                        new CounterService.Lifecycle(context));
+            } catch (Throwable e) {
+                Slog.e(TAG, "Failure starting CounterService", e);
+            }

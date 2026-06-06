@@ -1,0 +1,13 @@
+prebuilt_etc {
+    name: "hal_counter_default_contexts",
+    src: "hal_counter_default_contexts",
+    sub_dir: "selinux",
+    filename_from_src: true,
+}
+
+prebuilt_etc {
+    name: "hal_counter_default_property_contexts",
+    src: "hal_counter_default_property_contexts",
+    sub_dir: "selinux",
+    filename_from_src: true,
+}

@@ -1,0 +1,7 @@
+prebuilt_etc {
+    name: "android.hardware.counter-service.xml",
+    src: "Android.hardware.counter-service.xml",
+    filename_from_src: true,
+    installable: true,
+    vendor: true,
+}

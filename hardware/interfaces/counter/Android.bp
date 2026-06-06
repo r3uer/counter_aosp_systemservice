@@ -1,0 +1,9 @@
+# The HAL package itself has no top-level targets. The build entry points are:
+#
+#   m android.hardware.counter-aidl          # generates the AIDL stubs
+#   m android.hardware.counter-impl          # builds the C++ implementation library
+#   m android.hardware.counter-service       # builds the binder binary
+#   m hal_counter_client                     # builds the C++ test client
+#   m android.hardware.counter-java          # builds the Java client library
+#
+# Each subdirectory owns its own Android.bp.

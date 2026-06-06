@@ -1,0 +1,6 @@
+# 1) adb shell cmd counter get
+# 2) adb shell cmd counter inc 10
+# 3) adb shell cmd counter reset
+# 4) adb shell cmd counter add 2 3
+
+cmd counter help

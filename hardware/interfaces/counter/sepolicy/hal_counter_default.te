@@ -1,0 +1,16 @@
+type hal_counter_default, domain;
+type hal_counter_default_exec, exec_type, vendor_file_type, file_type;
+type counter_aidl_hwservice, hwservice_manager_type, vendor_service_type;
+
+init_daemon_domain(hal_counter_default)
+
+allow hal_counter_default self:binder { call transfer };
+allow hal_counter_default hwservicemanager:binder { call transfer };
+allow hal_counter_default hwservicemanager:service_manager { add find };
+allow hal_counter_default counter_aidl_hwservice:hwservice_manager { add find };
+allow hal_counter_default vendor_hal_data_file:dir create_dir_perms;
+allow hal_counter_default vendor_hal_data_file:file create_file_perms;
+
+vndbinder_use(hal_counter_default)
+binder_call(hal_counter_default, system_server)
+binder_call(hal_counter_default, hal)

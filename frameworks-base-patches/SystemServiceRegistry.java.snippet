@@ -1,0 +1,17 @@
+// File: frameworks/base/core/java/android/app/SystemServiceRegistry.java
+// Add this registration block in the static { } initializer, near the other
+// registerService(...) calls (e.g. near BatteryManager / Vibrator).
+// Make sure to add the import for android.counter.CounterManager at the top.
+
+import android.counter.CounterManager;
+import android.os.ICounterService;
+
+registerService(Context.COUNTER_SERVICE, CounterManager.class,
+        new CachedServiceFetcher<CounterManager>() {
+            @Override
+            public CounterManager createService(ContextImpl ctx) {
+                IBinder b = ServiceManager.getService(Context.COUNTER_SERVICE);
+                ICounterService service = ICounterService.Stub.asInterface(b);
+                return new CounterManager(ctx, service);
+            }
+        });

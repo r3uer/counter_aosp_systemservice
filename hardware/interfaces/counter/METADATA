@@ -1,0 +1,8 @@
+{
+    "Name": "Counter HAL (example)",
+    "Maintainers": ["your-team@example.com"],
+    "Component": ["hardware/interfaces/counter"],
+    "Description": "Sample AIDL HAL with default C++ implementation, used by the CounterService example.",
+    "Bug": "https://example.com/issue-tracker",
+    "Visibility": ["PUBLIC"],
+}

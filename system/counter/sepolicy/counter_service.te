@@ -1,0 +1,12 @@
+type counter_service, domain;
+type counter_service_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(counter_service)
+
+allow counter_service self:process execmem;
+allow counter_service servicemanager:binder { call transfer };
+allow counter_service servicemanager:service_manager { add find };
+allow counter_service system_server:binder { call transfer };
+allow counter_service system_server:service_manager { find };
+allow counter_service system_app_data_file:dir create_dir_perms;
+allow counter_service system_app_data_file:file create_file_perms;

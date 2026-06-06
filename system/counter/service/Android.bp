@@ -1,0 +1,18 @@
+java_library {
+    name: "counter-service",
+    srcs: [
+        "java/**/*.java",
+    ],
+    libs: [
+        "android.os.ICounterService-aidl",
+        "services",
+    ],
+    static_libs: [
+        "android.hardware.common-V1.0",
+    ],
+    platform_apis: true,
+    installable: true,
+    dex_preopt: {
+        enabled: false,
+    },
+}

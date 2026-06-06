@@ -1,0 +1,10 @@
+// File: frameworks/base/core/java/android/content/Context.java
+// Add this constant alongside the existing @SystemService constants.
+// Find: public static final String POWER_SERVICE = "power";
+// Add after it:
+
+    /**
+     * Use with {@link #getSystemService(String)} to retrieve a
+     * {@link android.counter.CounterManager} for managing the counter service.
+     */
+    public static final String COUNTER_SERVICE = "counter";

@@ -1,0 +1,19 @@
+// File: frameworks/base/services/Android.bp
+// Either:
+//   (a) Add "counter-service" to the "services" library's `srcs` if you want it
+//       compiled as part of the existing services module, OR
+//   (b) Leave it as a separate library and depend on it from SystemServer.
+//
+// If you go with (b), add this to the SystemServer target's deps:
+//   "counter-service",
+
+// And add to the relevant android_library / java_library that produces the
+// system_server dex:
+java_library {
+    name: "services",
+    // ...
+    static_libs: [
+        "counter-service",
+    ],
+    // ...
+}
